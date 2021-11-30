@@ -1,126 +1,104 @@
 <template>
 <div id="home">
-  <Nav/>
   <Banner/>
-  <div id="mainContent">
-    <transition name="fade">
-      <router-view/>
-    </transition>
-    <div class="block4">
-      <div class="block4_useful_links">
-        <div class="title">USEFUL LINKS</div>
-        <div class="links-box">
-          <ul>
-            <li class="links">dgffnbjy</li>
-            <li class="links">vdfnbjy</li>
-            <li class="links">hgvfnb</li>
-            <li class="links">vdbfnjyb</li>
-            <li class="links">gzsedb</li>
-          </ul>
-          <ul>
-            <li class="links">dgfgfdsfnbjy</li>
-            <li class="links">fsvdbfnjyb</li>
-            <li class="links">gzsedbfd</li>
-          </ul>
-        </div>
-      </div>
-      <div class="block4_mission">
-        <div class="block4 menu_picbox">
-          <div class="pic" v-for="items,idx in imgList" :key="idx" @click="showPic.status = true,showPic.openPic">
-            <img :src="items.src" alt="">
+    <div class="block1">
+      <div class="block1_subtitle subtitle">Welcome to</div>
+      <div class="block1_title title">CAFFEE HOUSE</div>
+      <div class="block1_descript descript">Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.
+Morbi accuam nectellus</div>
+      <div class="block1_cards">
+        <div class="block1_cards_items">
+          <div class="icon">
+            <img src="../assets/icons/icon1.png" alt="">
+          </div>
+          <div class="title">
+            HANDMADE
+          </div>
+          <div class="descript">
+            Suspendisse vestibulum mi libero, sed rhoncus turpis rhoncus id. Praesent viverra risus in dui varius luctus! Aenean placerat libero odio, at elementum posuere.
           </div>
         </div>
-        <div class="block4 menu_descript">
-          <div class="title">MISSION</div>
-          <div class="descript">Duis pulvinar sollicitudin ultrices. In maximus convallis facilisis! Cras placerat justo sapien, a condimentum lacus interdum ut. Curabitur dignissim pharetra nisl, vitae condimentum ligula. In ac sagittis nunc. Aenean pretium suscipit ligula ac porttitor. Vivamus venenatis mi non ligula.</div>
+        <div class="block1_cards_items">
+          <div class="icon">
+            <img src="../assets/icons/icon2.png" alt="">
+          </div>
+          <div class="title">FRESH & SWEET</div>
+          <div class="descript">Nullam id dolor id erat imperdiet scelerisque nec in nisi. Aliquam erat volutpat. Maecenas viverra velit non ipsum venenatis, et congue erat suscipit cras amet.</div>
+        </div>
+        <div class="block1_cards_items">
+          <div class="icon">
+            <img src="../assets/icons/icon3.png" alt="">
+          </div>
+          <div class="title">TRADITIONAL</div>
+          <div class="descript">Suspendisse vestibulum mi libero, sed rhoncus turpis rhoncus id. Praesent viverra risus in dui varius luctus! Aenean placerat libero odio, at elementum posuere.</div>
+        </div>
+        <div class="block1_cards_items">
+          <div class="icon">
+            <img src="../assets/icons/icon4.png" alt="">
+          </div>
+          <div class="title">MADE WITH LOVE</div>
+          <div class="descript">Suspendisse vestibulum mi libero, sed rhoncus turpis rhoncus id. Praesent viverra risus in dui varius luctus! Aenean placerat libero odio, at elementum posuere.</div>
+        </div>
+      </div>
+      <div class="btn">
+        <span>SEE WHERE WE ARE</span>
+      </div>
+    </div>
+    <div class="block2">
+      <div class="block2_pic">
+        <img src="../assets/img/home_cafe_person.png" alt="">
+      </div>
+      <div class="block2_content">
+        <div class="block2_subtitle subtitle">Original</div>
+        <div class="block2_title title">TRADITION</div>
+        <div class="block2_icon icon">
+          <img src="../assets/icons/dove.png" alt="">
+        </div>
+        <div class="block2_descript descript">Donec blandit mauris aliquet felis sagittis, non imperdiet dolor volutpat. Etiam iaculis felis metus, vel tristique enim sodales non. In vitae mi a nunc nullam.</div>
+        <div class="block2_descript descript">Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudi, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.</div>
+        <div class="btn">
+          <span>SEE WHERE WE ARE</span>
         </div>
       </div>
     </div>
-    <div class="footer">
-      © 2021 lisa6125 | All Rights Reserved | 僅用於練習
+    <div class="block3">
+      <div class="block3_content">
+          <div class="block3_title">OUR CUSTOMERS LOVE US</div>
+          <div class="block3_icon icon">
+            <img src="../assets/icons/feather2.png" alt="">
+          </div>
+          <div class="block3_descript descript">Donec blandit mauris aliquet felis sagittis, non imperdiet dolor volutpat. Etiam iaculis felis metus, vel tristique enim sodales non. In vitae mi a nunc nullam.</div>
+          <div class="block3_subtitle subtitle">Ash Curtis</div>
+      </div>
+      <div class="block3_picView">
+        <img v-parallax="0.6" src="../assets/img/dessert3.jpg" alt="">
+        <div class="block3_picView_content">
+          <div class="block3_picView_content_icon">
+            <img src="../assets/icons/feather1.png" alt="">
+          </div>
+          <div class="block3_picView_content_title">SPEND THE SWEETEST MOMENTS IN OUR CAFE</div>
+          <div class="btn">
+            <span>SEE MORE</span>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-  <div id="showPicBox" v-show="showPic.status">
-    <div class="picItem" @click="changePic">
-      <img :src="imgList[showPic.openPic].src" alt="">
-    </div>
-    <div class="closeBtn" @click="showPic.status = false">
-      <i class="fas fa-times"></i>
-    </div>
-  </div>
 </div>
 </template>
 
 <script>
-import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
-import 'swiper/css/swiper.css'
-import Nav from "../components/Nav.vue"
 import Banner from "../components/Banner.vue"
-import Main from "../components/Main.vue"
 export default {
-  components: {
-    Swiper,
-    SwiperSlide,
-    Nav,
-    Banner,
-    Main
-  },
   name: 'Home',
-  data() {
-    return {
-        swiperOptionbanner: {
-          slidesPerView: 1,
-          spaceBetween: 0,
-          effect: 'fade',
-          slidesPerGroup: 1,
-          loop: true,
-          loopFillGroupWithBlank: true,
-          autoplay: {
-            disableOnInteraction: true,
-            delay:3000
-          }
-        },
-        showPic:{
-          status:false,
-          openPic:0
-        },
-        imgList:[
-          {src:require('../assets/img/dessert3.jpg')},
-          {src:require('../assets/img/dessert4.jpg')},
-          {src:require('../assets/img/dessert5.jpg')},
-          {src:require('../assets/img/dessert2.jpg')},
-          {src:require('../assets/img/dessert1.jpg')},
-          {src:require('../assets/img/dessert6.jpg')},
-        ]
-      }
-  },
-  methods:{
-    changePic(){
-      if(this.showPic.openPic === (this.imgList.length-1)){
-        this.showPic.openPic = 0
-      }else{
-        this.showPic.openPic = (this.showPic.openPic + 1) %(this.imgList.length+1)
-      }
-    }
+  components: {
+    Banner,
   },
 }
 </script>
 
 <style lang="scss">
 @import "../assets/scss/_variables.scss";
-#home{
-  width: 100%;
-  max-width: 1200px;
-  background: #fff;
-  margin: 15px auto;
-}
 
-#banner{
-  padding: 20px;
-}
-#mainContent{
-  color: $mainDarkBrown;
-  font-family: 'Cormorant', serif;
   .block1{
     border-bottom: 1px solid $mainFontColor-o1;
     &_descript{
@@ -220,74 +198,7 @@ export default {
       margin-top: 50px;
     }
   }
-  .block4{
-    @extend %flex-center;
-    background: $mainLightBrown;
-    padding: 20px;
-    font-weight: 900;
-    >div{
-      width: 50%;
-    }
-    &_useful_links{
-      padding: 20px;
-    }
-    .title{
-      font-size: 18px;
-      text-align: left;
-    }
-    .links-box{
-      display: flex;
-      padding: 10px 20px;
-      ul{
-        height: 200px;
-        width: 50%;
-        margin: 0;
-        .links{
-          list-style: circle;
-          width: 50%;
-          margin: 10px 0;
-        }
-      }
-    }
-    &_mission{
-      @extend %flex-center;
-      .menu{
-        &_picbox{
-          padding: 0;
-          @extend %flex-center;
-          .pic{
-            padding: 2px;
-            width: 33.33%;
-            height: 100px;
-            overflow: hidden;
-            cursor: pointer;
-            img{
-              @extend %img-cover;
-            }
-          }
-        }
-        &_descript{
-          display: block;
-          .descript{
-            line-height: 1.2;
-            font-weight: 500;
-            width: 100%;
-            margin-top: 20px;
-          }
-        }
-      }
-      >div{
-        width: 50%;
-      }
-    }
-  }
-  .footer{
-    background: $mainFooterBrown;
-    padding: 30px;
-    text-align: center;
-    color: #fff;
-    border-radius:0 0 5px 5px;
-  }
+
   .descript{
     text-align: center;
   }
@@ -329,39 +240,6 @@ export default {
         background: $mainFontColor;
         color: $mainLightBrown;
         transition: 0.3s ease-in-out all;
-      }
-    }
-  }
-}
-  #showPicBox{
-    width: 100%;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(8px);
-    position: fixed;
-    z-index: 999;
-    top: 0;
-    left: 0;
-    .picItem{
-      width: 600px;
-      height: 600px;
-      cursor: pointer;
-      @extend %position-center;
-      img{
-        @extend %img-contain;
-      }
-    }
-    .closeBtn{
-      position: absolute;
-      top: 30px;
-      right: 60px;
-      font-size: 36px;
-      color: rgb(180, 180, 180);
-      transition: 0.1s ease-in-out all;
-      cursor: pointer;
-      :hover{
-        color: rgb(255, 255, 255);
-        transition: 0.1s ease-in-out all;
       }
     }
   }

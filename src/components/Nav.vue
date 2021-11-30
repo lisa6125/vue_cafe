@@ -7,11 +7,11 @@
       </div>
     </div>
     <div class="pagesLink">
-      <div class="pagesLink_item">Home</div>
-      <div class="pagesLink_item">Menu</div>
-      <div class="pagesLink_item">Tradition</div>
-      <div class="pagesLink_item">Gallery</div>
-      <div class="pagesLink_item">Local</div>
+      <router-link to="/" class="pagesLink_item">Home</router-link>
+      <router-link to="/Menu" class="pagesLink_item" >Menu</router-link>
+      <router-link to="/Tradition" class="pagesLink_item">Tradition</router-link>
+      <router-link to="/#" class="pagesLink_item">Gallery</router-link>
+      <router-link to="/#" class="pagesLink_item">Local</router-link>
     </div>
   </div>
 </template>
@@ -102,12 +102,18 @@ window.onscroll = function () {
       border-left: 1px solid rgba(255, 255, 255, 0.274);
       cursor: pointer;
       transition: 0.3s ease-in-out all;
+      color: aliceblue;
+      text-decoration: none;
       &:hover{
         background: $mainFontColor-2;
         color: $mainDarkBrown;
         transition: 0.3s ease-in-out all;
       }
     }
+  }
+  .router-link-exact-active{
+    background: $mainFontColor-2;
+    color: $mainDarkBrown;
   }
 }
 </style>
