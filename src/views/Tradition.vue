@@ -43,12 +43,50 @@
         </div>
       </div>
     </div>
+    <div class="tradition_rolling">
+      <div class="tradition_rolling_item">
+        <div class="pic">
+          <img src="../assets/icons/icon1.png" alt="">
+        </div>
+        <div class="num">
+          <vue-rolling-number :from="0" :to="1250" :speed="1" />
+        </div>
+        <div class="subtitle">
+          Eleifend ante lobortis
+        </div>
+      </div>
+      <div class="tradition_rolling_item">
+        <div class="pic">
+          <img src="../assets/icons/icon2.png" alt="">
+        </div>
+        <div class="num">
+          <vue-rolling-number :from="0" :to="56" :speed="1" />
+        </div>
+        <div class="subtitle">
+          Eleifend ante lobortis
+        </div>
+      </div>
+      <div class="tradition_rolling_item">
+        <div class="pic">
+          <img src="../assets/icons/icon3.png" alt="">
+        </div>
+        <div class="num">
+          <vue-rolling-number :from="1523" :to="7500" :speed="1" />
+        </div>
+        <div class="subtitle">
+          Eleifend ante lobortis
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
+import VueRollingNumber from 'vue-rolling-number'
 export default {
-
+  components: {
+    VueRollingNumber
+  }
 }
 </script>
 
@@ -144,6 +182,32 @@ export default {
           margin-right: 5px;
           background: $mainDarkGray;
         }
+      }
+    }
+  }
+  .tradition_rolling{
+    width:calc(100% - 40px) ;
+    height: 300px;
+    padding: 30px;
+    margin: 20px;
+    background: $mainLightBrown-2;
+    @extend %flex-center;
+    &_item{
+      width: 33.33%;
+      @extend %flex-column;
+      .pic{
+        width: 100px;
+        height: 100px;
+        img{
+          @extend %img-contain;
+        }
+      }
+      .num{
+        line-height: 1.5;
+        font-size: 46px;
+      }
+      .subtitle{
+        margin-top: 10px;
       }
     }
   }

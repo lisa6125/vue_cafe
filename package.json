@@ -19,6 +19,7 @@
     "vue": "^2.6.10",
     "vue-awesome-swiper": "^4.1.1",
     "vue-parallax-js": "^0.2.3",
+    "vue-rolling-number": "^0.1.4",
     "vue-router": "^3.5.2",
     "vuex": "^3.6.2"
   },
