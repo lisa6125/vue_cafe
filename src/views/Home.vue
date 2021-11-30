@@ -101,18 +101,31 @@ export default {
 
   .block1{
     border-bottom: 1px solid $mainFontColor-o1;
+    @include pad{
+      padding-bottom: 50px;
+    }
     &_descript{
       margin: 0 auto;
       width: 400px;
       margin-top: 20px;
+      @include pad{
+        padding: 0 20px;
+        width: 100%;
+      }
     }
     &_cards{
       margin-top: 70px;
       padding: 0 20px;
       @extend %flex-center;
+      @include pad{
+        margin-top: 10px;
+      }
       &_items{
         width: 25%;
         padding: 20px;
+        @include pad{
+          width: 50%;
+        }
         .icon{
           text-align: center;
         }
@@ -121,6 +134,9 @@ export default {
           font-weight: 900;
           font-size: 24px;
           margin-top: 10px;
+          @include pad{
+            font-size: 16px;
+          }
         }
         .descript{
           margin-top: 20px;
@@ -134,6 +150,14 @@ export default {
     @extend %flex-center;
     >div{
       width: 50%;
+      @include pad{
+        width: 100%;
+      }
+    }
+    &_pic{
+      img{
+        @extend %img-contain
+      }
     }
     &_descript{
       margin-top: 10px;
@@ -166,6 +190,10 @@ export default {
           text-align: center;
           margin: 0 auto;
           margin-top: 10px;
+          @include pad{
+            width: 100%;
+            font-size: 24px;
+          }
         }
         &_icon{
           text-align: center;
@@ -180,11 +208,20 @@ export default {
         top: -20%;
         left: 0;
         width: 100%;
+        @include pad{
+          width: 100%;
+          height: 100vh;
+          object-fit: cover;
+        }
       }
     }
     &_descript{
       width: 400px;
       margin: 0 auto;
+      @include pad{
+        width: 100%;
+        padding: 0 20px;
+      }
     }
     &_title{
       font-size: 18px;
@@ -223,6 +260,9 @@ export default {
     font-family: 'Cormorant', serif;
     text-align: center;
     margin-top: 10px;
+    @include pad{
+      font-size: 20px;
+    }
   }
   .btn{
     color: $mainDarkBrown;
@@ -231,6 +271,10 @@ export default {
     margin: 0 auto;
     padding: 50px;
     text-align: center;
+    @include pad{
+      margin-top: 50px;
+      padding: 0;
+    }
     span{
       padding: 10px 20px;
       border: 1px solid $mainDarkBrown;

@@ -51,6 +51,9 @@ export default {
     font-weight: 900;
     >div{
       width: 50%;
+      @include pad{
+        width: 100%;
+      }
     }
     &_useful_links{
       padding: 20px;
@@ -66,6 +69,9 @@ export default {
         height: 200px;
         width: 50%;
         margin: 0;
+        @include pad{
+          height: 100%;
+        }
         .links{
           list-style: circle;
           width: 50%;
@@ -102,6 +108,9 @@ export default {
       }
       >div{
         width: 50%;
+        @include pad{
+          width: 100%;
+        }
       }
     }
   }
@@ -111,5 +120,8 @@ export default {
     text-align: center;
     color: #fff;
     border-radius:0 0 5px 5px;
+    @include pad{
+      font-size: 12px;
+    }
   }
 </style>

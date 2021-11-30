@@ -43,5 +43,8 @@ export default {
 @import "../assets/scss/_variables.scss";
 #banner{
   padding: 20px;
+  img{
+    @extend %img-cover;
+  }
 }
 </style>

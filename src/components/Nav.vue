@@ -95,6 +95,9 @@ window.onscroll = function () {
     height: 100%;
     color: $mainLightBrown;
     @extend %flex-center;
+    @include pad{
+      display: none;
+    }
     &_item{
       padding: 0 30px;
       height: 100%;
