@@ -159,6 +159,15 @@ export default {
         }
       }
     }
+    @include pad{
+      &_pic{
+        width: 100%;
+        margin-bottom: 20px;
+      }
+      &_decript{
+        padding: 0px;
+      }
+    }
   }
 }
 </style>

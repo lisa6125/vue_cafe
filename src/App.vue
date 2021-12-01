@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div id="MainContainer">
-      <Nav/>
+      <Nav :handleMenu="openSideMenu" @handleOpen="openSideMenu = !openSideMenu"/>
       <transition name="fade">
         <router-view/>
       </transition>
@@ -35,7 +35,8 @@ export default {
           {src:require('./assets/img/dessert2.jpg')},
           {src:require('./assets/img/dessert1.jpg')},
           {src:require('./assets/img/dessert6.jpg')},
-        ]
+        ],
+        openSideMenu:false,
       }
   },
   methods:{

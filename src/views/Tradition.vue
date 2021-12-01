@@ -133,6 +133,9 @@ export default {
         color: #fff;
         float: left;
       }
+      @include mobile{
+        width: 100%;
+      }
     }
   }
   .tradition_chef{
@@ -184,6 +187,14 @@ export default {
         }
       }
     }
+    @include mobile{
+      .chefPic,.chefDescript,.chefConnect{
+        width: 100%;
+      }
+      .chefDescript{
+        padding: 10px 25px;
+      }
+    }
   }
   .tradition_rolling{
     width:calc(100% - 40px) ;
@@ -208,6 +219,22 @@ export default {
       }
       .subtitle{
         margin-top: 10px;
+      }
+    }
+    @include mobile{
+      margin-top: 0;
+      &_item{
+        .pic{
+          width: 40px;
+          height: 40px;
+        }
+        .num{
+          font-size: 20px;
+        }
+        .subtitle{
+          font-size: 12px;
+          text-align: center;
+        }
       }
     }
   }

@@ -36,6 +36,9 @@ export default {
       height: 600px;
       cursor: pointer;
       @extend %position-center;
+      @include pad{
+        width: 80%;
+      }
       img{
         @extend %img-contain;
       }
@@ -48,6 +51,10 @@ export default {
       color: rgb(180, 180, 180);
       transition: 0.1s ease-in-out all;
       cursor: pointer;
+      @include pad{
+        top: 10px;
+        right: 20px;
+      }
       :hover{
         color: rgb(255, 255, 255);
         transition: 0.1s ease-in-out all;

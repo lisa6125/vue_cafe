@@ -13,12 +13,32 @@
       <router-link to="/#" class="pagesLink_item">Gallery</router-link>
       <router-link to="/#" class="pagesLink_item">Local</router-link>
     </div>
+    <div class="openIcon" @click="handleOpen">
+      <i class="fas fa-bars"></i>
+    </div>
+    <div class="sideList" :class="{openSideList:handleMenu}">
+      <router-link to="/" class="sideList_item">Home</router-link>
+      <router-link to="/Menu" class="sideList_item" >Menu</router-link>
+      <router-link to="/Tradition" class="sideList_item">Tradition</router-link>
+      <router-link to="/#" class="sideList_item">Gallery</router-link>
+      <router-link to="/#" class="sideList_item">Local</router-link>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  name:"Nav"
+  name:"Nav",
+  props:["handleMenu"],
+  data(){
+    return{
+    }
+  },
+  methods:{
+    handleOpen(){
+      this.$emit("handleOpen")
+    }
+  }
 }
 window.onscroll = function () {
   var nav = document.getElementById('nav');
@@ -60,12 +80,28 @@ window.onscroll = function () {
       &_name{
         font-size: 30px;
       }
+      @include pad{
+        width: 50px;
+        margin-left: 20px;
+        &_name{
+          font-size: 24px;
+          right: -180px;
+        }
+      }
     }
     .pagesLink{
       &_item{
         padding: 0 30px;
         height: 100%;
         line-height: 70px;
+      }
+    }
+    .sideList{
+      opacity: 0;
+      top: 80px;
+      transition: 0.3s ease-in-out all;
+      &.openSideList{
+        opacity: 1;
       }
     }
   }
@@ -89,6 +125,14 @@ window.onscroll = function () {
       font-family: 'Cormorant', serif;
       font-size: 30px;
     }
+    @include pad{
+      width: 50px;
+      margin-left: 20px;
+      &_name{
+        font-size: 24px;
+        right: -180px;
+      }
+    }
   }
   .pagesLink{
     float: right;
@@ -111,6 +155,48 @@ window.onscroll = function () {
         background: $mainFontColor-2;
         color: $mainDarkBrown;
         transition: 0.3s ease-in-out all;
+      }
+    }
+  }
+  .openIcon{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    font-size: 32px;
+    color: #fff;
+    text-align: center;
+    padding-top: 10px;
+    display: none;
+    @include pad{
+      display: inline-block;
+    }
+  }
+  .sideList{
+    background: rgba(39, 39, 39, 0.383);
+    @extend %flex-center;
+    width: calc(100% - 20px);
+    margin: 0 10px;
+    position: absolute;
+    top: 100px;
+    opacity: 0;
+    z-index: 800;
+    transition: 0.3s ease-in-out all;
+    &.openSideList{
+      opacity: 1;
+    }
+    &_item{
+      padding: 10px 20px;
+      height: 100%;
+      line-height: 40px;
+      text-decoration: none;
+      color: #fff;
+      font-size: 24px;
+      @include mobile{
+        padding: 0 14px;
+        font-size: 16px;
       }
     }
   }
