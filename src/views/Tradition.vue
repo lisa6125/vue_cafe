@@ -116,6 +116,12 @@ export default {
         left: 0;
         width: 100%;
     }
+    @include pad{
+      img{
+        height: 70vh;
+        top: -0%;
+      }
+    }
   }
   .tradition_text{
     @extend %flex-center;

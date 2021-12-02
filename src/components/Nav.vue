@@ -10,17 +10,17 @@
       <router-link to="/" class="pagesLink_item">Home</router-link>
       <router-link to="/Menu" class="pagesLink_item" >Menu</router-link>
       <router-link to="/Tradition" class="pagesLink_item">Tradition</router-link>
-      <router-link to="/#" class="pagesLink_item">Gallery</router-link>
+      <router-link to="/Gallery" class="pagesLink_item">Gallery</router-link>
       <router-link to="/#" class="pagesLink_item">Local</router-link>
     </div>
-    <div class="openIcon" @click="handleOpen">
+    <div class="openIcon" @click="handleOpen" :class="{openBtn:handleMenu}">
       <i class="fas fa-bars"></i>
     </div>
     <div class="sideList" :class="{openSideList:handleMenu}">
       <router-link to="/" class="sideList_item">Home</router-link>
       <router-link to="/Menu" class="sideList_item" >Menu</router-link>
       <router-link to="/Tradition" class="sideList_item">Tradition</router-link>
-      <router-link to="/#" class="sideList_item">Gallery</router-link>
+      <router-link to="/Gallery" class="sideList_item">Gallery</router-link>
       <router-link to="/#" class="sideList_item">Local</router-link>
     </div>
   </div>
@@ -173,6 +173,9 @@ window.onscroll = function () {
     @include pad{
       display: inline-block;
     }
+  }
+  .openBtn{
+    color: $mainDarkGray;
   }
   .sideList{
     background: rgba(39, 39, 39, 0.383);

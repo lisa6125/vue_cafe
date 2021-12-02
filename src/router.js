@@ -31,6 +31,15 @@ Vue.use(VueRouter);
       meta: {
         title: "cafeTradition",
       },
+    },
+    {
+      path: '/Gallery',
+      name: "Gallery",
+      component: () =>
+        import(/* webpackChunkName: "Home" */ "./views/Gallery.vue"),
+      meta: {
+        title: "cafeGallery",
+      },
     }
   ]
 
