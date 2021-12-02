@@ -2,12 +2,12 @@
 <div id="home">
   <Banner/>
     <div class="block1">
-      <div class="block1_subtitle subtitle">Welcome to</div>
-      <div class="block1_title title">CAFFEE HOUSE</div>
-      <div class="block1_descript descript">Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.
+      <div class="block1_subtitle subtitle wow animate__animated animate__fadeInUp">Welcome to</div>
+      <div class="block1_title title wow animate__animated animate__fadeInUp">CAFFEE HOUSE</div>
+      <div class="block1_descript descript wow animate__animated animate__fadeInUp">Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.
 Morbi accuam nectellus</div>
       <div class="block1_cards">
-        <div class="block1_cards_items">
+        <div class="block1_cards_items wow animate__animated animate__flipInY">
           <div class="icon">
             <img src="../assets/icons/icon1.png" alt="">
           </div>
@@ -18,21 +18,21 @@ Morbi accuam nectellus</div>
             Suspendisse vestibulum mi libero, sed rhoncus turpis rhoncus id. Praesent viverra risus in dui varius luctus! Aenean placerat libero odio, at elementum posuere.
           </div>
         </div>
-        <div class="block1_cards_items">
+        <div class="block1_cards_items wow animate__animated animate__flipInY"  data-wow-delay="0.3s">
           <div class="icon">
             <img src="../assets/icons/icon2.png" alt="">
           </div>
           <div class="title">FRESH & SWEET</div>
           <div class="descript">Nullam id dolor id erat imperdiet scelerisque nec in nisi. Aliquam erat volutpat. Maecenas viverra velit non ipsum venenatis, et congue erat suscipit cras amet.</div>
         </div>
-        <div class="block1_cards_items">
+        <div class="block1_cards_items wow animate__animated animate__flipInY"  data-wow-delay="0.6s">
           <div class="icon">
             <img src="../assets/icons/icon3.png" alt="">
           </div>
           <div class="title">TRADITIONAL</div>
           <div class="descript">Suspendisse vestibulum mi libero, sed rhoncus turpis rhoncus id. Praesent viverra risus in dui varius luctus! Aenean placerat libero odio, at elementum posuere.</div>
         </div>
-        <div class="block1_cards_items">
+        <div class="block1_cards_items wow animate__animated animate__flipInY"  data-wow-delay="0.9s">
           <div class="icon">
             <img src="../assets/icons/icon4.png" alt="">
           </div>
@@ -50,7 +50,7 @@ Morbi accuam nectellus</div>
       </div>
       <div class="block2_content">
         <div class="block2_subtitle subtitle">Original</div>
-        <div class="block2_title title">TRADITION</div>
+        <div class="block2_title title wow animate__animated animate__fadeInUp">TRADITION</div>
         <div class="block2_icon icon">
           <img src="../assets/icons/dove.png" alt="">
         </div>
@@ -87,12 +87,17 @@ Morbi accuam nectellus</div>
 </template>
 
 <script>
-import Banner from "../components/Banner.vue"
+import Banner from "../components/Banner.vue";
 export default {
   name: 'Home',
   components: {
     Banner,
   },
+  created(){
+    this.$nextTick(()=>{
+      this.$wow.init()
+    })
+  }
 }
 </script>
 
@@ -158,6 +163,9 @@ export default {
       img{
         @extend %img-contain
       }
+    }
+    &_content{
+      padding: 0 20px;
     }
     &_descript{
       margin-top: 10px;

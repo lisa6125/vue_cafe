@@ -17,6 +17,16 @@ Vue.use(VueAwesomeSwiper);
 import VueParallaxJs from 'vue-parallax-js'
 Vue.use(VueParallaxJs)
 
+import 'animate.css';
+import { WOW } from 'wowjs';
+Vue.prototype.$wow = new WOW({
+  offset: 100,
+  live:false
+})
+
+
+
+
 Vue.config.productionTip = false
 
 new Vue({
