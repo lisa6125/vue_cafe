@@ -1,17 +1,16 @@
 <template>
   <div id="nav">
-    <div class="logo">
+    <router-link to="/" class="logo">
       <img src="../assets/icons/logo.png" alt="">
       <div class="logo_name">
         CAFFEE HOUSE
       </div>
-    </div>
+    </router-link>
     <div class="pagesLink">
       <router-link to="/" class="pagesLink_item">Home</router-link>
       <router-link to="/Menu" class="pagesLink_item" >Menu</router-link>
       <router-link to="/Tradition" class="pagesLink_item">Tradition</router-link>
       <router-link to="/Gallery" class="pagesLink_item">Gallery</router-link>
-      <router-link to="/#" class="pagesLink_item">Local</router-link>
     </div>
     <div class="openIcon" @click="handleOpen" :class="{openBtn:handleMenu}">
       <i class="fas fa-bars"></i>
@@ -21,7 +20,6 @@
       <router-link to="/Menu" class="sideList_item" >Menu</router-link>
       <router-link to="/Tradition" class="sideList_item">Tradition</router-link>
       <router-link to="/Gallery" class="sideList_item">Gallery</router-link>
-      <router-link to="/#" class="sideList_item">Local</router-link>
     </div>
   </div>
 </template>
@@ -80,6 +78,9 @@ window.onscroll = function () {
       &_name{
         font-size: 30px;
       }
+      &.router-link-exact-active{
+        background: rgba(0, 0, 0, 0);
+      }
       @include pad{
         width: 50px;
         margin-left: 20px;
@@ -113,6 +114,9 @@ window.onscroll = function () {
     position: relative;
     cursor: pointer;
     transition: 0.3s ease-in-out all;
+    &.router-link-exact-active{
+        background: rgba(0, 0, 0, 0);
+      }
     img{
       @extend %img-contain;
     }
